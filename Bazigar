@@ -1,0 +1,50 @@
+import time
+import sys
+
+# ASCII Eagle using 0 and 1
+eagle = """
+000000111000000
+000011111110000
+000111111111000
+001111111111100
+011111111111110
+111100111001111
+111000000001111
+111000000001111
+111100111001111
+011111111111110
+001111111111100
+000111111111000
+000011111110000
+000000111000000
+"""
+
+# Your details
+name = "White Devil"
+instagram = "@devilboy14032"
+email = "devilboy14032@gmail.com"
+
+# Function to print with delay (cool effect)
+def slow_print(text, delay=0.01):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()
+
+# Display eagle
+slow_print(eagle, 0.002)
+time.sleep(0.5)
+
+# Display details
+slow_print(f"Name     : {name}")
+slow_print(f"Instagram: {instagram}")
+slow_print(f"Email    : {email}")
+
+# Keep open until user presses Ctrl+C
+print("\nPress Ctrl+C to exit...")
+try:
+    while True:
+        time.sleep(1)
+except KeyboardInterrupt:
+    print("\nExiting... Goodbye!")
